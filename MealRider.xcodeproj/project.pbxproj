@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7CE966D11A607C84006A0189 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE966D01A607C84006A0189 /* main.m */; };
+		7CE966D41A607C84006A0189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE966D31A607C84006A0189 /* AppDelegate.m */; };
+		7CE966D71A607C84006A0189 /* MealRider.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CE966D51A607C84006A0189 /* MealRider.xcdatamodeld */; };
+		7CE966DA1A607C84006A0189 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE966D91A607C84006A0189 /* ViewController.m */; };
+		7CE966DD1A607C84006A0189 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE966DB1A607C84006A0189 /* Main.storyboard */; };
+		7CE966DF1A607C84006A0189 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CE966DE1A607C84006A0189 /* Images.xcassets */; };
+		7CE966E21A607C84006A0189 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE966E01A607C84006A0189 /* LaunchScreen.xib */; };
+		7CE966EE1A607C84006A0189 /* MealRiderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE966ED1A607C84006A0189 /* MealRiderTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7CE966E81A607C84006A0189 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CE966C31A607C83006A0189 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CE966CA1A607C83006A0189;
+			remoteInfo = MealRider;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7CE966CB1A607C84006A0189 /* MealRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CE966CF1A607C84006A0189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CE966D01A607C84006A0189 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7CE966D21A607C84006A0189 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7CE966D31A607C84006A0189 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7CE966D61A607C84006A0189 /* MealRider.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MealRider.xcdatamodel; sourceTree = "<group>"; };
+		7CE966D81A607C84006A0189 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7CE966D91A607C84006A0189 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7CE966DC1A607C84006A0189 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7CE966DE1A607C84006A0189 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7CE966E11A607C84006A0189 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7CE966E71A607C84006A0189 /* MealRiderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealRiderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CE966EC1A607C84006A0189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CE966ED1A607C84006A0189 /* MealRiderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealRiderTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7CE966C81A607C83006A0189 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CE966E41A607C84006A0189 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7CE966C21A607C83006A0189 = {
+			isa = PBXGroup;
+			children = (
+				7CE966CD1A607C84006A0189 /* MealRider */,
+				7CE966EA1A607C84006A0189 /* MealRiderTests */,
+				7CE966CC1A607C84006A0189 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7CE966CC1A607C84006A0189 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CE966CB1A607C84006A0189 /* MealRider.app */,
+				7CE966E71A607C84006A0189 /* MealRiderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7CE966CD1A607C84006A0189 /* MealRider */ = {
+			isa = PBXGroup;
+			children = (
+				7CE966D21A607C84006A0189 /* AppDelegate.h */,
+				7CE966D31A607C84006A0189 /* AppDelegate.m */,
+				7CE966D81A607C84006A0189 /* ViewController.h */,
+				7CE966D91A607C84006A0189 /* ViewController.m */,
+				7CE966DB1A607C84006A0189 /* Main.storyboard */,
+				7CE966DE1A607C84006A0189 /* Images.xcassets */,
+				7CE966E01A607C84006A0189 /* LaunchScreen.xib */,
+				7CE966D51A607C84006A0189 /* MealRider.xcdatamodeld */,
+				7CE966CE1A607C84006A0189 /* Supporting Files */,
+			);
+			path = MealRider;
+			sourceTree = "<group>";
+		};
+		7CE966CE1A607C84006A0189 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CE966CF1A607C84006A0189 /* Info.plist */,
+				7CE966D01A607C84006A0189 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7CE966EA1A607C84006A0189 /* MealRiderTests */ = {
+			isa = PBXGroup;
+			children = (
+				7CE966ED1A607C84006A0189 /* MealRiderTests.m */,
+				7CE966EB1A607C84006A0189 /* Supporting Files */,
+			);
+			path = MealRiderTests;
+			sourceTree = "<group>";
+		};
+		7CE966EB1A607C84006A0189 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CE966EC1A607C84006A0189 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7CE966CA1A607C83006A0189 /* MealRider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CE966F11A607C84006A0189 /* Build configuration list for PBXNativeTarget "MealRider" */;
+			buildPhases = (
+				7CE966C71A607C83006A0189 /* Sources */,
+				7CE966C81A607C83006A0189 /* Frameworks */,
+				7CE966C91A607C83006A0189 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MealRider;
+			productName = MealRider;
+			productReference = 7CE966CB1A607C84006A0189 /* MealRider.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7CE966E61A607C84006A0189 /* MealRiderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CE966F41A607C84006A0189 /* Build configuration list for PBXNativeTarget "MealRiderTests" */;
+			buildPhases = (
+				7CE966E31A607C84006A0189 /* Sources */,
+				7CE966E41A607C84006A0189 /* Frameworks */,
+				7CE966E51A607C84006A0189 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7CE966E91A607C84006A0189 /* PBXTargetDependency */,
+			);
+			name = MealRiderTests;
+			productName = MealRiderTests;
+			productReference = 7CE966E71A607C84006A0189 /* MealRiderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7CE966C31A607C83006A0189 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Visceral Origami LLC";
+				TargetAttributes = {
+					7CE966CA1A607C83006A0189 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					7CE966E61A607C84006A0189 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 7CE966CA1A607C83006A0189;
+					};
+				};
+			};
+			buildConfigurationList = 7CE966C61A607C83006A0189 /* Build configuration list for PBXProject "MealRider" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7CE966C21A607C83006A0189;
+			productRefGroup = 7CE966CC1A607C84006A0189 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7CE966CA1A607C83006A0189 /* MealRider */,
+				7CE966E61A607C84006A0189 /* MealRiderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7CE966C91A607C83006A0189 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CE966DD1A607C84006A0189 /* Main.storyboard in Resources */,
+				7CE966E21A607C84006A0189 /* LaunchScreen.xib in Resources */,
+				7CE966DF1A607C84006A0189 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CE966E51A607C84006A0189 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7CE966C71A607C83006A0189 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CE966D41A607C84006A0189 /* AppDelegate.m in Sources */,
+				7CE966D11A607C84006A0189 /* main.m in Sources */,
+				7CE966DA1A607C84006A0189 /* ViewController.m in Sources */,
+				7CE966D71A607C84006A0189 /* MealRider.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CE966E31A607C84006A0189 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CE966EE1A607C84006A0189 /* MealRiderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7CE966E91A607C84006A0189 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CE966CA1A607C83006A0189 /* MealRider */;
+			targetProxy = 7CE966E81A607C84006A0189 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7CE966DB1A607C84006A0189 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CE966DC1A607C84006A0189 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7CE966E01A607C84006A0189 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CE966E11A607C84006A0189 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7CE966EF1A607C84006A0189 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7CE966F01A607C84006A0189 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7CE966F21A607C84006A0189 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MealRider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7CE966F31A607C84006A0189 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MealRider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7CE966F51A607C84006A0189 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MealRiderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MealRider.app/MealRider";
+			};
+			name = Debug;
+		};
+		7CE966F61A607C84006A0189 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MealRiderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MealRider.app/MealRider";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7CE966C61A607C83006A0189 /* Build configuration list for PBXProject "MealRider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CE966EF1A607C84006A0189 /* Debug */,
+				7CE966F01A607C84006A0189 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CE966F11A607C84006A0189 /* Build configuration list for PBXNativeTarget "MealRider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CE966F21A607C84006A0189 /* Debug */,
+				7CE966F31A607C84006A0189 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7CE966F41A607C84006A0189 /* Build configuration list for PBXNativeTarget "MealRiderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CE966F51A607C84006A0189 /* Debug */,
+				7CE966F61A607C84006A0189 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7CE966D51A607C84006A0189 /* MealRider.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7CE966D61A607C84006A0189 /* MealRider.xcdatamodel */,
+			);
+			currentVersion = 7CE966D61A607C84006A0189 /* MealRider.xcdatamodel */;
+			path = MealRider.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7CE966C31A607C83006A0189 /* Project object */;
+}

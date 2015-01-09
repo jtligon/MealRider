@@ -1,0 +1,27 @@
+//
+//  ViewController.m
+//  MealRider
+//
+//  Created by Jeff Ligon on 1/9/15.
+//  Copyright (c) 2015 Visceral Origami LLC. All rights reserved.
+//
+
+#import "ViewController.h"
+
+@interface ViewController ()
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+@end
