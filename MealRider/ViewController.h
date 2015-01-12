@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RequestCreator.h"
 
 @interface ViewController : UIViewController
 
+@property (nonatomic,strong) IBOutlet RequestCreator *rc;
+
+@property (weak, nonatomic) IBOutlet UIButton *requestButton;
+
+-(IBAction)sendRequest:(id)sender;
 
 @end
 
