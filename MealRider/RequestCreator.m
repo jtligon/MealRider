@@ -20,6 +20,34 @@
     return self;
 }
 
+-(void)genericRequestTranslocWithEndpoint:(NSString*)endPoint geoArea:(NSString*)geoAreaString arguments:(NSString*)args{
+    
+    NSDictionary *headers = @{@"X-Mashape-Key": @"ysuKkNDkPnmsh6Udvv3XNdw0AzYbp1xyufdjsnRTV0yP8TgvlT"};
+    NSString *urlString = [NSString stringWithFormat:@"https://transloc-api-1-2.p.mashape.com/%@.json?geo_area=%@&routes=4000204", endPoint, geoAreaString ];
+    
+    if([args length] >0 ){
+        urlString = [urlString stringByAppendingString:args];
+    }
+    UNIUrlConnection *asyncConnection = [[UNIRest get:^(UNISimpleRequest *request) {
+        [request setUrl:urlString];
+        [request setHeaders:headers];
+        
+    }] asJsonAsync:^(UNIHTTPJsonResponse *response, NSError *error) {
+        
+        NSInteger code = response.code;
+        NSDictionary *responseHeaders = response.headers;
+        UNIJsonNode *body = response.body;
+        NSData *rawBody = response.rawBody;
+        
+        NSLog(@"%@", [body description]);
+    }];
+
+}
+
+-(void)genericRequestTranslocWithEndpoint:(NSString*)endPoint geoArea:(NSString*)geoAreaString{
+    [self genericRequestTranslocWithEndpoint:endPoint geoArea:geoAreaString arguments:nil];
+}
+
 -(void)sendRequestToTransloc{
     NSLog(@"Request Created!");
     // These code snippets use an open-source library. http://unirest.io/objective-c

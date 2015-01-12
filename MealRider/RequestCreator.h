@@ -19,4 +19,6 @@
 -(IBAction)getStops;
 -(IBAction)getVehicles;
 
+-(void)genericRequestTranslocWithEndpoint:(NSString*)endPoint geoArea:(NSString*)geoAreaString;
+
 @end
