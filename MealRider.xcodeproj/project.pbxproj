@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C2E8A6C1A65BFF300914F0F /* DataMocker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2E8A6B1A65BFF300914F0F /* DataMocker.m */; };
+		7C2E8A6F1A674B9E00914F0F /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2E8A6E1A674B9E00914F0F /* SwipeViewController.m */; };
 		7C7DFC7E1A64574000D8EA6D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C7DFC7D1A64574000D8EA6D /* CoreLocation.framework */; };
 		7CE966D11A607C84006A0189 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE966D01A607C84006A0189 /* main.m */; };
 		7CE966D41A607C84006A0189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE966D31A607C84006A0189 /* AppDelegate.m */; };
@@ -32,6 +34,10 @@
 
 /* Begin PBXFileReference section */
 		14D2AA5117A10CD832E8E7D4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7C2E8A6A1A65BFF300914F0F /* DataMocker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataMocker.h; sourceTree = "<group>"; };
+		7C2E8A6B1A65BFF300914F0F /* DataMocker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataMocker.m; sourceTree = "<group>"; };
+		7C2E8A6D1A674B9E00914F0F /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
+		7C2E8A6E1A674B9E00914F0F /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
 		7C7DFC7D1A64574000D8EA6D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7CE966CB1A607C84006A0189 /* MealRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE966CF1A607C84006A0189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,9 +124,13 @@
 				7CE966D31A607C84006A0189 /* AppDelegate.m */,
 				7CE966D81A607C84006A0189 /* ViewController.h */,
 				7CE966D91A607C84006A0189 /* ViewController.m */,
+				7C2E8A6D1A674B9E00914F0F /* SwipeViewController.h */,
+				7C2E8A6E1A674B9E00914F0F /* SwipeViewController.m */,
 				7CE966F71A60AFCC006A0189 /* RequestCreator.h */,
 				7CE966F81A60AFCC006A0189 /* RequestCreator.m */,
 				7CE966DB1A607C84006A0189 /* Main.storyboard */,
+				7C2E8A6A1A65BFF300914F0F /* DataMocker.h */,
+				7C2E8A6B1A65BFF300914F0F /* DataMocker.m */,
 				7CE966DE1A607C84006A0189 /* Images.xcassets */,
 				7CE966E01A607C84006A0189 /* LaunchScreen.xib */,
 				7CE966D51A607C84006A0189 /* MealRider.xcdatamodeld */,
@@ -293,9 +303,11 @@
 			files = (
 				7CE966D41A607C84006A0189 /* AppDelegate.m in Sources */,
 				7CE966D11A607C84006A0189 /* main.m in Sources */,
+				7C2E8A6C1A65BFF300914F0F /* DataMocker.m in Sources */,
 				7CE966DA1A607C84006A0189 /* ViewController.m in Sources */,
 				7CE966F91A60AFCC006A0189 /* RequestCreator.m in Sources */,
 				7CE966D71A607C84006A0189 /* MealRider.xcdatamodeld in Sources */,
+				7C2E8A6F1A674B9E00914F0F /* SwipeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
