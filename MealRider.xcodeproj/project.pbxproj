@@ -10,6 +10,13 @@
 		7C2E8A6C1A65BFF300914F0F /* DataMocker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2E8A6B1A65BFF300914F0F /* DataMocker.m */; };
 		7C2E8A6F1A674B9E00914F0F /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2E8A6E1A674B9E00914F0F /* SwipeViewController.m */; };
 		7C2E8A711A675C2C00914F0F /* splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E8A701A675C2C00914F0F /* splash.jpg */; };
+		7C2E8A7A1A67609B00914F0F /* bidaManda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E8A731A67609B00914F0F /* bidaManda.jpg */; };
+		7C2E8A7B1A67609B00914F0F /* fishChips.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E8A741A67609B00914F0F /* fishChips.jpg */; };
+		7C2E8A7C1A67609B00914F0F /* Healthy-Food.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E8A751A67609B00914F0F /* Healthy-Food.jpg */; };
+		7C2E8A7D1A67609B00914F0F /* kebab.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E8A761A67609B00914F0F /* kebab.jpg */; };
+		7C2E8A7E1A67609B00914F0F /* pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E8A771A67609B00914F0F /* pizza.jpg */; };
+		7C2E8A7F1A67609B00914F0F /* reuben.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E8A781A67609B00914F0F /* reuben.jpg */; };
+		7C2E8A801A67609B00914F0F /* sandwich.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E8A791A67609B00914F0F /* sandwich.jpg */; };
 		7C7DFC7E1A64574000D8EA6D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C7DFC7D1A64574000D8EA6D /* CoreLocation.framework */; };
 		7CE966D11A607C84006A0189 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE966D01A607C84006A0189 /* main.m */; };
 		7CE966D41A607C84006A0189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE966D31A607C84006A0189 /* AppDelegate.m */; };
@@ -40,6 +47,13 @@
 		7C2E8A6D1A674B9E00914F0F /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
 		7C2E8A6E1A674B9E00914F0F /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
 		7C2E8A701A675C2C00914F0F /* splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash.jpg; sourceTree = "<group>"; };
+		7C2E8A731A67609B00914F0F /* bidaManda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bidaManda.jpg; sourceTree = "<group>"; };
+		7C2E8A741A67609B00914F0F /* fishChips.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fishChips.jpg; sourceTree = "<group>"; };
+		7C2E8A751A67609B00914F0F /* Healthy-Food.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Healthy-Food.jpg"; sourceTree = "<group>"; };
+		7C2E8A761A67609B00914F0F /* kebab.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kebab.jpg; sourceTree = "<group>"; };
+		7C2E8A771A67609B00914F0F /* pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizza.jpg; sourceTree = "<group>"; };
+		7C2E8A781A67609B00914F0F /* reuben.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = reuben.jpg; sourceTree = "<group>"; };
+		7C2E8A791A67609B00914F0F /* sandwich.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sandwich.jpg; sourceTree = "<group>"; };
 		7C7DFC7D1A64574000D8EA6D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7CE966CB1A607C84006A0189 /* MealRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE966CF1A607C84006A0189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +113,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7C2E8A721A67607900914F0F /* foodImages */ = {
+			isa = PBXGroup;
+			children = (
+				7C2E8A731A67609B00914F0F /* bidaManda.jpg */,
+				7C2E8A741A67609B00914F0F /* fishChips.jpg */,
+				7C2E8A751A67609B00914F0F /* Healthy-Food.jpg */,
+				7C2E8A761A67609B00914F0F /* kebab.jpg */,
+				7C2E8A771A67609B00914F0F /* pizza.jpg */,
+				7C2E8A781A67609B00914F0F /* reuben.jpg */,
+				7C2E8A791A67609B00914F0F /* sandwich.jpg */,
+			);
+			name = foodImages;
+			sourceTree = "<group>";
+		};
 		7CE966C21A607C83006A0189 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +156,7 @@
 				7CE966D91A607C84006A0189 /* ViewController.m */,
 				7C2E8A6D1A674B9E00914F0F /* SwipeViewController.h */,
 				7C2E8A6E1A674B9E00914F0F /* SwipeViewController.m */,
+				7C2E8A721A67607900914F0F /* foodImages */,
 				7CE966F71A60AFCC006A0189 /* RequestCreator.h */,
 				7CE966F81A60AFCC006A0189 /* RequestCreator.m */,
 				7CE966DB1A607C84006A0189 /* Main.storyboard */,
@@ -251,8 +280,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C2E8A7C1A67609B00914F0F /* Healthy-Food.jpg in Resources */,
 				7C2E8A711A675C2C00914F0F /* splash.jpg in Resources */,
+				7C2E8A7A1A67609B00914F0F /* bidaManda.jpg in Resources */,
 				7CE966DD1A607C84006A0189 /* Main.storyboard in Resources */,
+				7C2E8A7F1A67609B00914F0F /* reuben.jpg in Resources */,
+				7C2E8A801A67609B00914F0F /* sandwich.jpg in Resources */,
+				7C2E8A7B1A67609B00914F0F /* fishChips.jpg in Resources */,
+				7C2E8A7E1A67609B00914F0F /* pizza.jpg in Resources */,
+				7C2E8A7D1A67609B00914F0F /* kebab.jpg in Resources */,
 				7CE966E21A607C84006A0189 /* LaunchScreen.xib in Resources */,
 				7CE966DF1A607C84006A0189 /* Images.xcassets in Resources */,
 			);
