@@ -9,6 +9,7 @@
 #import "SwipeViewController.h"
 #import "DataMocker.h"
 #import <MapKit/MapKit.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 
 @interface SwipeViewController ()
@@ -25,11 +26,19 @@
     [self performSegueWithIdentifier:@"MapKitEntry" sender:sender];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.restaurant = 0;
+-(void)nextRestaurant{
+    //get the next index
+    self.restaurant +=1;
+    //wrap it around if it goes too far
+    if (self.restaurant >= [[DataMocker listOfRestaurant]count]) {
+        self.restaurant = 0;
+    }
+    //get the associated string for use in the keys;
     self.restString = [DataMocker listOfRestaurant][self.restaurant];
-    
+    [self loadUpNextImageForChoice];
+}
+
+-(void)loadUpNextImageForChoice{
     MDCSwipeToChooseViewOptions* options = [[MDCSwipeToChooseViewOptions alloc]init];
     options.delegate = self;
     
@@ -42,11 +51,35 @@
     };
     
     self.swipeView = [[MDCSwipeToChooseView alloc]initWithFrame:self.view.bounds options:options];
-    self.swipeView.backgroundColor = [UIColor yellowColor];
+    self.swipeView.backgroundColor = [UIColor clearColor];
+    
+    //use the cached image so we can roll back around
     UIImage* anImage =[UIImage imageNamed:[[DataMocker imgNameForRestaurant]objectForKey:self.restString]];
+    anImage = [anImage resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch];
+    self.swipeView.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.swipeView.imageView.image = anImage;
+
+//    didn't like how the shadow turned out
+    
+//    CALayer *maskLayer = [CALayer layer];
+//    maskLayer.frame = self.swipeView.imageView.bounds;
+//    maskLayer.shadowRadius = 20;
+//    maskLayer.shadowPath = CGPathCreateWithRoundedRect(CGRectInset(self.swipeView.imageView.bounds, 5, 5), 10, 10, nil);
+//    maskLayer.shadowOpacity = 1;
+//    maskLayer.shadowOffset = CGSizeZero;
+//    maskLayer.shadowColor = [UIColor whiteColor].CGColor;
+//    
+//    self.swipeView.imageView.layer.mask = maskLayer;
     
     [self.view addSubview:self.swipeView];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.restaurant = 0;
+    self.restString = [DataMocker listOfRestaurant][self.restaurant];
+    [self loadUpNextImageForChoice];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -55,16 +88,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)nextRestaurant{
-    //get the next index
-    self.restaurant +=1;
-    //wrap it around if it goes too far
-    if (self.restaurant > [[DataMocker listOfRestaurant]count]) {
-        self.restaurant = 0;
-    }
-    //get the associated string for use in the keys;
-    self.restString = [DataMocker listOfRestaurant][self.restaurant];
-}
+
 
 #pragma mark - MDCSwipeToChooseDelegate Callbacks
 
@@ -93,7 +117,6 @@
     if (direction == MDCSwipeDirectionLeft) {
         NSLog(@"Next please!");
         [self nextRestaurant];
-        self.swipeView.imageView.image = [UIImage imageNamed:[[DataMocker imgNameForRestaurant]objectForKey:self.restString]];
     } else {
         NSLog(@"Photo saved!");
     }

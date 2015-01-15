@@ -32,12 +32,12 @@
 
 +(NSDictionary*)imgNameForRestaurant{
     return @{
-             @"Mitch's Tavern":@"reuben",
-             @"Sammy's":@"fishChips",
-             @"Bida Manda":@"bidaManda",
-             @"David's Dumplings":@"",
-             @"Zaxby's":@"zaxbys",
-             @"East Village":@"sandwich"
+             @"Mitch's Tavern":@"reuben.jpg",
+             @"Sammy's":@"fishChips.jpg",
+             @"Bida Manda":@"bidaManda.jpg",
+             @"David's Dumplings":@"dumplings.jpg",
+             @"Zaxby's":@"zaxbys.jpg",
+             @"East Village":@"sandwich.jpg"
              };
 }
 
