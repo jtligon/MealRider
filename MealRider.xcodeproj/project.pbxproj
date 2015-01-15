@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7C2E8A6C1A65BFF300914F0F /* DataMocker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2E8A6B1A65BFF300914F0F /* DataMocker.m */; };
 		7C2E8A6F1A674B9E00914F0F /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2E8A6E1A674B9E00914F0F /* SwipeViewController.m */; };
+		7C2E8A711A675C2C00914F0F /* splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E8A701A675C2C00914F0F /* splash.jpg */; };
 		7C7DFC7E1A64574000D8EA6D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C7DFC7D1A64574000D8EA6D /* CoreLocation.framework */; };
 		7CE966D11A607C84006A0189 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE966D01A607C84006A0189 /* main.m */; };
 		7CE966D41A607C84006A0189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE966D31A607C84006A0189 /* AppDelegate.m */; };
@@ -38,6 +39,7 @@
 		7C2E8A6B1A65BFF300914F0F /* DataMocker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataMocker.m; sourceTree = "<group>"; };
 		7C2E8A6D1A674B9E00914F0F /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
 		7C2E8A6E1A674B9E00914F0F /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
+		7C2E8A701A675C2C00914F0F /* splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash.jpg; sourceTree = "<group>"; };
 		7C7DFC7D1A64574000D8EA6D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7CE966CB1A607C84006A0189 /* MealRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE966CF1A607C84006A0189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				7C2E8A6A1A65BFF300914F0F /* DataMocker.h */,
 				7C2E8A6B1A65BFF300914F0F /* DataMocker.m */,
 				7CE966DE1A607C84006A0189 /* Images.xcassets */,
+				7C2E8A701A675C2C00914F0F /* splash.jpg */,
 				7CE966E01A607C84006A0189 /* LaunchScreen.xib */,
 				7CE966D51A607C84006A0189 /* MealRider.xcdatamodeld */,
 				7CE966CE1A607C84006A0189 /* Supporting Files */,
@@ -248,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C2E8A711A675C2C00914F0F /* splash.jpg in Resources */,
 				7CE966DD1A607C84006A0189 /* Main.storyboard in Resources */,
 				7CE966E21A607C84006A0189 /* LaunchScreen.xib in Resources */,
 				7CE966DF1A607C84006A0189 /* Images.xcassets in Resources */,
@@ -432,6 +436,7 @@
 			baseConfigurationReference = A0EEE9B3291BCCE2F678E60F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MealRider/Info.plist;
@@ -446,6 +451,7 @@
 			baseConfigurationReference = 14D2AA5117A10CD832E8E7D4 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MealRider/Info.plist;

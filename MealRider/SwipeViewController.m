@@ -23,6 +23,16 @@
     
     MDCSwipeToChooseViewOptions* options = [[MDCSwipeToChooseViewOptions alloc]init];
     options.delegate = self;
+    
+    options.likedText = @"Eat";
+    options.likedColor = [UIColor blueColor];
+    options.nopeText = @"Not Today";
+    options.onPan = ^(MDCPanState *state){
+        if (state.thresholdRatio == 1.f && state.direction == MDCSwipeDirectionLeft) {
+            NSLog(@"Let go now to delete the photo!");
+        }
+    };
+    
     self.swipeView = [[MDCSwipeToChooseView alloc]initWithFrame:self.view.bounds options:options];
     [self.view addSubview:self.swipeView];
     // Do any additional setup after loading the view.
