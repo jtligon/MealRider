@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RequestCreator.h"
+#import "Testflight.h"
 
 @interface AppDelegate ()
 
@@ -18,9 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [TestFlight takeOff:@"8830a7d4-3845-468a-aa3e-de9289919e21"];
     
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

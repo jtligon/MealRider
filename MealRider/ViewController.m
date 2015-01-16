@@ -34,11 +34,6 @@
     [self.rc genericRequestTranslocWithEndpoint:@"routes" geoArea:@"35.80176%2C-78.64347%7C35.78061%2C-78.68218"];
 }
 
--(void)viewDidDisappear:(BOOL)animated{
-    if (self.rc){
-        self.rc = nil;
-    }
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
