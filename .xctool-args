@@ -1,0 +1,5 @@
+[
+  "-workspace", "MealRider.xcworkspace",
+  "-scheme", "MealRider",
+  "-configuration", "Release"
+]
