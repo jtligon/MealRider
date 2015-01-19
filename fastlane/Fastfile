@@ -30,7 +30,7 @@ end
 
 lane :deploy do
   #snapshot
-  sigh :adhoc
+  sigh
   deliver :skip_deploy, :force
   # frameit
 end

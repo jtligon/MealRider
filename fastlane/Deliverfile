@@ -54,7 +54,7 @@ end
 
 # beta_ipa do
     system("ipa build --verbose") # customize this to build beta version
-    "./MealRider.ipa"" # upload ipa file using `deliver --beta`
+    "./MealRider_beta.ipa"" # upload ipa file using `deliver --beta`
 # end
 
 # unit_tests do
