@@ -13,6 +13,7 @@
 @interface SwipeViewController : UIViewController<MDCSwipeToChooseDelegate>
 
 @property (nonatomic,strong) MDCSwipeToChooseView* swipeView;
+@property (nonatomic,strong) UILabel* nameLable;
 
 
 @end

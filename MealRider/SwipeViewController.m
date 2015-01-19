@@ -58,6 +58,18 @@
     anImage = [anImage resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch];
     self.swipeView.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.swipeView.imageView.image = anImage;
+    
+    
+    //add the Label 
+    CGRect labelRect = CGRectMake(20, self.view.center.y -30, self.view.bounds.size.width, 60);
+    self.nameLable = [[UILabel alloc]initWithFrame:labelRect];
+    self.nameLable.textAlignment = NSTextAlignmentNatural;
+
+    self.nameLable.text = self.restString;
+    UIFont *labelFont = [UIFont fontWithName:@"GillSans-Bold" size:24.0];
+    self.nameLable.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:.8];
+    self.nameLable.font = labelFont;
+    [self.nameLable sizeToFit];
 
 //    didn't like how the shadow turned out
     
@@ -72,6 +84,7 @@
 //    self.swipeView.imageView.layer.mask = maskLayer;
     
     [self.view addSubview:self.swipeView];
+    [self.swipeView addSubview:self.nameLable];
 }
 
 - (void)viewDidLoad {

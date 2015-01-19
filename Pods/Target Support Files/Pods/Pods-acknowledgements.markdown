@@ -25,15 +25,6 @@ THE SOFTWARE.
 
 
 
-## TestFlightSDK
-
-All text and design is copyright © 2010-2014 TestFlight App, Inc.
-
-All rights reserved.
-
-https://testflightapp.com/tos/
-
-
 ## Unirest
 
 The MIT License

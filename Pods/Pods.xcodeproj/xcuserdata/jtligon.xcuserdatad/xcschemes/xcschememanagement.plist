@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-TestFlightSDK.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Unirest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>15EBE9E48431280E9F67A0EC</key>
+		<key>01CBBF1217AFA5B11638C3A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>24E52220BBB5B840C759D49F</key>
+		<key>48F7B95F4CF0BAA44A176997</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>39863AE966EF39437910E9B7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9F3D5F7DE19007CA74E5298A</key>
+		<key>CDB06B9BF8A60408B2BF5B93</key>
 		<dict>
 			<key>primary</key>
 			<true/>
