@@ -46,22 +46,17 @@ ipa do
     # Attention: When you return a valid ipa file, this file will get uploaded and released
     # If you only want to upload app metadata, remove the complete ipa block.
 
-    # system("ipa build --verbose") # build your project using Shenzhen
-    "./MealRider.ipa" # Tell 'Deliver' where it can find the finished ipa file
+    system("ipa build --verbose") # build your project using Shenzhen
+    "../MealRider.ipa" # Tell 'Deliver' where it can find the finished ipa file
 end
 
 # ipa "./latest.ipa" # this can be used instead of the `do` block, if you prefer manually building the ipa file
 
-# beta_ipa do
+beta_ipa do
     system("ipa build --verbose") # customize this to build beta version
-    "./MealRider_beta.ipa"" # upload ipa file using `deliver --beta`
-# end
-
-# unit_tests do
-#   If you use fastlane (http://github.com/krausefx/fastlane), run the tests there
-#   system("xctool test")
-# end
+    "../MealRider_beta.ipa" # upload ipa file using `deliver --beta`
+end
 
 success do
-  # system("say 'Successfully deployed a new version.'")
+	system("say 'Successfully deployed a new version.'")
 end
