@@ -10,15 +10,11 @@
 
 @interface RequestCreator : NSObject
 
--(IBAction)sendRequestToTransloc;
-
 -(IBAction)getAgencies;
 -(IBAction)getArrivalEstimates;
 -(IBAction)getRoutes;
 -(IBAction)getSegments;
 -(IBAction)getStops;
 -(IBAction)getVehicles;
-
--(void)genericRequestTranslocWithEndpoint:(NSString*)endPoint geoArea:(NSString*)geoAreaString;
 
 @end

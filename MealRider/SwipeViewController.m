@@ -8,6 +8,7 @@
 
 #import "SwipeViewController.h"
 #import "DataMocker.h"
+#import "RequestCreator.h"
 #import <MapKit/MapKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 
@@ -119,6 +120,9 @@
     shouldBeChosenWithDirection:(MDCSwipeDirection)direction {
   if (direction == MDCSwipeDirectionLeft) {
     return YES;
+  }else if (direction == MDCSwipeDirectionRight){
+      return YES;
+  
   } else {
     // Snap the view back and cancel the choice.
     [UIView animateWithDuration:0.16
@@ -137,7 +141,9 @@
   if (direction == MDCSwipeDirectionLeft) {
     NSLog(@"Next please!");
     [self nextRestaurant];
-  } else {
+  } else if (direction == MDCSwipeDirectionRight){
+      RequestCreator* rc = [[RequestCreator alloc]init];
+      [rc getAgencies];
     NSLog(@"Photo saved!");
   }
 }
