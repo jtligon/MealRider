@@ -12,23 +12,22 @@
 @protocol RequestDelegate <NSObject>
 @required
 
+- (void)storeAgencies:(NSDictionary *)agencyDict;
+- (void)storeStops:(NSDictionary *)stopDict;
 @optional
 
-- (void) storeAgencies: (NSDictionary*) agencyDict;
-- (void) storeRoutes: (NSDictionary*) routeDict;
-- (void) storeStops: (NSDictionary*) stopDict;
+- (void)storeRoutes:(NSDictionary *)routeDict;
 @end
-
 
 @interface RequestCreator : NSObject
 
-@property (nonatomic, weak) IBOutlet NSObject<RequestDelegate> *delegate;
+@property(nonatomic, weak) IBOutlet NSObject<RequestDelegate> *delegate;
 
-- (IBAction)getAgenciesWithLocation:(CLLocation*)location;
--(IBAction)getArrivalEstimates;
-- (IBAction)getRoutesForAgencies:(NSDictionary*)agencies;
--(IBAction)getSegments;
--(IBAction)getStops;
--(IBAction)getVehicles;
+- (IBAction)getAgenciesWithLocation:(CLLocation *)location;
+- (IBAction)getArrivalEstimates;
+- (IBAction)getRoutesForAgencies:(NSDictionary *)agencies;
+- (IBAction)getSegments;
+- (void)getStopsForAgencies:(NSDictionary *)agencies;
+- (IBAction)getVehicles;
 
 @end

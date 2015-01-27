@@ -16,6 +16,7 @@
 
 @property(nonatomic, strong) NSDictionary *agencyDict;
 @property(nonatomic, strong) NSDictionary *routeDict;
+@property(nonatomic, strong) NSDictionary *stopDict;
 
 @end
 
@@ -131,7 +132,7 @@
 - (void)storeAgencies:(NSDictionary *)agencyDict {
   self.agencyDict = agencyDict;
   self.textView.text = [agencyDict description];
-    [self.rc getRoutesForAgencies:agencyDict];
+    [self.rc getStopsForAgencies:agencyDict];
   NSLog(@"%@", [agencyDict description]);
 }
 
@@ -139,6 +140,13 @@
     self.routeDict = routeDict;
     self.textView.text = [self.textView.text stringByAppendingString:[routeDict description]];
     NSLog(@"%@",[routeDict description]);
+    
+}
+
+- (void) storeStops:(NSDictionary *)stopDict{
+    self.stopDict = stopDict;
+    self.textView.text = [self.textView.text stringByAppendingString:[stopDict description]];
+    NSLog(@"%@",[stopDict description]);
     
 }
 
