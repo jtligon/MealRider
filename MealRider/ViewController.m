@@ -18,6 +18,9 @@
 @property(nonatomic, strong) NSDictionary *routeDict;
 @property(nonatomic, strong) NSDictionary *stopDict;
 
+@property(nonatomic,assign)CLLocation *userLocation;
+@property(nonatomic, assign) BOOL dataReady;
+
 @end
 
 @implementation ViewController
@@ -29,6 +32,7 @@
   if (!self.rc) {
     self.rc = [[RequestCreator alloc] init];
     self.rc.delegate = self;
+      self.dataReady = NO;
   }
 
   self.mapView.delegate = self;
@@ -89,7 +93,13 @@
 
     self.textView.text = latLongString;
   }
-
+    self.userLocation = currentLocation;
+    if ([self areWeReady]) {
+        [self findOurStop];
+    }else{
+        [self.rc getAgenciesWithLocation:self.userLocation];
+    }
+    
   // Reverse Geocoding
   NSLog(@"Resolving the Address");
   [self.geocoder
@@ -127,6 +137,46 @@
   }
 }
 
+-(BOOL)areWeReady{
+    if (!self.dataReady) {
+        if (self.stopDict) {
+            if (self.userLocation) {
+                self.dataReady = YES;
+                return YES;
+            }
+        }
+    }
+    return NO;
+}
+
+-(void)findOurStop{
+    self.dataReady = NO;
+    //we should have our stops and our location here
+    NSArray* distances = [NSArray array];
+    float latitude,longitude = 0.0f;
+    CLLocation* someLoc = nil;
+    for (NSDictionary* locDict in self.stopDict[@"locs"]) {
+        latitude = (float)[[locDict valueForKey:@"latitude"] floatValue];
+        longitude = (float)[[locDict valueForKey:@"longitude"] floatValue];
+        someLoc = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+        double distance =[self.userLocation distanceFromLocation:someLoc];
+        distances = [distances arrayByAddingObject:[NSNumber numberWithDouble:distance] ];
+    }
+    NSArray *sortedDistances = [distances sortedArrayUsingComparator:^NSComparisonResult(id lhs, id rhs) {
+        if ([lhs floatValue] > [rhs floatValue]) {
+            return NSOrderedAscending;
+        } else if ([lhs floatValue] < [rhs floatValue]) {
+            return NSOrderedDescending;
+        } else {
+                return NSOrderedSame;
+        }
+    }];
+    // index is the stop that is closest to the user
+    int index = [distances indexOfObject:sortedDistances[0]];
+    self.textView.text = [NSString stringWithFormat:@"The closest stop to your location is %@", self.stopDict[@"names"][index]];
+    
+}
+
 #pragma mark - RequestDelegate stuff
 
 - (void)storeAgencies:(NSDictionary *)agencyDict {
@@ -147,7 +197,11 @@
     self.stopDict = stopDict;
     self.textView.text = [self.textView.text stringByAppendingString:[stopDict description]];
     NSLog(@"%@",[stopDict description]);
-    
+    if ([self areWeReady]) {
+        [self findOurStop];
+    }else{
+        [self getCurrLocation:self];
+    }
 }
 
 #pragma mark - MapViewStuff
