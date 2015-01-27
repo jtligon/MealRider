@@ -38,6 +38,7 @@
 		7C2E8A7F1A67609B00914F0F /* reuben.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E8A781A67609B00914F0F /* reuben.jpg */; };
 		7C2E8A801A67609B00914F0F /* sandwich.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E8A791A67609B00914F0F /* sandwich.jpg */; };
 		7C2E8A821A67620000914F0F /* zaxbys.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E8A811A67620000914F0F /* zaxbys.jpg */; };
+		7C4D112D1A772A720001554A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4D112C1A772A720001554A /* MapKit.framework */; };
 		7C7DFC7E1A64574000D8EA6D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C7DFC7D1A64574000D8EA6D /* CoreLocation.framework */; };
 		7CBF67681A6857250094C7E8 /* dumplings.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CBF67671A6857250094C7E8 /* dumplings.jpg */; };
 		7CBF676A1A6863720094C7E8 /* splashFade.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CBF67691A6863720094C7E8 /* splashFade.jpg */; };
@@ -98,6 +99,7 @@
 		7C2E8A781A67609B00914F0F /* reuben.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = reuben.jpg; sourceTree = "<group>"; };
 		7C2E8A791A67609B00914F0F /* sandwich.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sandwich.jpg; sourceTree = "<group>"; };
 		7C2E8A811A67620000914F0F /* zaxbys.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zaxbys.jpg; sourceTree = "<group>"; };
+		7C4D112C1A772A720001554A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7C7DFC7D1A64574000D8EA6D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7CBF67671A6857250094C7E8 /* dumplings.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dumplings.jpg; sourceTree = "<group>"; };
 		7CBF67691A6863720094C7E8 /* splashFade.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splashFade.jpg; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C4D112D1A772A720001554A /* MapKit.framework in Frameworks */,
 				7C7DFC7E1A64574000D8EA6D /* CoreLocation.framework in Frameworks */,
 				A16F657254E9910F330EAD29 /* libPods.a in Frameworks */,
 			);
@@ -153,6 +156,7 @@
 		6D093EA2AB69D14D4B382B59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7C4D112C1A772A720001554A /* MapKit.framework */,
 				7C7DFC7D1A64574000D8EA6D /* CoreLocation.framework */,
 				EE7678A1EB1B440B4CE7D730 /* libPods.a */,
 			);

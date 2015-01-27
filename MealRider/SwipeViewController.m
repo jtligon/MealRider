@@ -14,8 +14,6 @@
 
 @interface SwipeViewController ()
 
-@property(nonatomic) int restaurant;
-@property(nonatomic, strong) NSString *restString;
 
 @end
 
@@ -142,9 +140,9 @@
     NSLog(@"Next please!");
     [self nextRestaurant];
   } else if (direction == MDCSwipeDirectionRight){
-      RequestCreator* rc = [[RequestCreator alloc]init];
-      [rc getAgencies];
-    NSLog(@"Photo saved!");
+      //send the location to the MapViewController!
+      [self performSegueWithIdentifier:@"MapKitEntry" sender:self];
+      
   }
 }
 

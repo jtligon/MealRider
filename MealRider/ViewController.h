@@ -8,25 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 #import "RequestCreator.h"
 
-@interface ViewController : UIViewController<CLLocationManagerDelegate>
+@interface ViewController : UIViewController<CLLocationManagerDelegate, MKMapViewDelegate, RequestDelegate>
 
 @property (nonatomic,strong) IBOutlet RequestCreator *rc;
-@property (weak, nonatomic) IBOutlet UIButton *requestButton;
 
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong,nonatomic) CLGeocoder *geocoder;
 @property (strong,nonatomic) CLPlacemark *placemark;
 
 //Labels
-@property (weak, nonatomic) IBOutlet UILabel *latitudeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *longitudeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *returnLabel;
 
-
-
--(IBAction)sendRequest:(id)sender;
 
 -(void)locationAquired;
 - (IBAction)getCurrLocation:(id)sender;

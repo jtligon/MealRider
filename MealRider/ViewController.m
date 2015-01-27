@@ -7,8 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "SwipeViewController.h"
 
 @interface ViewController ()
+
+@property(nonatomic) int restaurant;
+@property(nonatomic, strong) NSString *restString;
+
+@property(nonatomic, strong) NSDictionary *agencyDict;
+@property(nonatomic, strong) NSDictionary *routeDict;
 
 @end
 
@@ -20,18 +27,30 @@
   // Do any additional setup after loading the view, typically from a nib.
   if (!self.rc) {
     self.rc = [[RequestCreator alloc] init];
+    self.rc.delegate = self;
   }
+
+  self.mapView.delegate = self;
+    self.mapView.showsUserLocation=YES;
+    self.mapView.showsBuildings=YES;
+    
   self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager requestWhenInUseAuthorization];
   self.geocoder = [[CLGeocoder alloc] init];
+  self.locationManager.delegate = self;
+
+  [self getCurrLocation:nil];
 }
 
-- (IBAction)sendRequest:(id)sender {
-  NSLog(@"Button Pressed - VC");
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
-  //    [self.rc sendRequestToTransloc];
-  [self.rc
-      genericRequestTranslocWithEndpoint:
-          @"routes" geoArea:@"35.80176%2C-78.64347%7C35.78061%2C-78.68218"];
+  if ([segue.identifier isEqualToString:@"MapKitEntry"]) {
+
+    SwipeViewController *destination =
+        (SwipeViewController *)segue.destinationViewController;
+    self.restaurant = destination.restaurant;
+    self.restString = destination.restString;
+  }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,10 +80,11 @@
   CLLocation *currentLocation = newLocation;
 
   if (currentLocation != nil) {
-    self.longitudeLabel.text = [NSString
-        stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-    self.latitudeLabel.text = [NSString
-        stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+    NSString *latLongString = [NSString
+        stringWithFormat:@"%.8f, %.8f", currentLocation.coordinate.longitude,
+                         currentLocation.coordinate.latitude];
+    [self.rc getAgenciesWithLocation:currentLocation];
+    self.returnLabel.text = latLongString;
   }
 
   // Reverse Geocoding
@@ -75,8 +95,9 @@
              NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
              if (error == nil && [placemarks count] > 0) {
                self.placemark = [placemarks lastObject];
-               self.addressLabel.text =
-                   [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
+               self.returnLabel.text =
+                   [NSString stringWithFormat:@"%@ \n%@ %@\n%@ %@\n%@\n%@",
+                                              self.returnLabel.text,
                                               self.placemark.subThoroughfare,
                                               self.placemark.thoroughfare,
                                               self.placemark.postalCode,
@@ -101,6 +122,28 @@
   if ([CLLocationManager locationServicesEnabled]) {
     [self.locationManager startUpdatingLocation];
   }
+}
+
+#pragma mark - RequestDelegate stuff
+
+- (void)storeAgencies:(NSDictionary *)agencyDict {
+  self.agencyDict = agencyDict;
+  self.returnLabel.text = [agencyDict description];
+    [self.rc getRoutesForAgencies:agencyDict];
+  NSLog(@"%@", [agencyDict description]);
+}
+
+- (void) storeRoutes:(NSDictionary *)routeDict{
+    self.routeDict = routeDict;
+    self.returnLabel.text = [self.returnLabel.text stringByAppendingString:[routeDict description]];
+    NSLog(@"%@",[routeDict description]);
+    
+}
+
+#pragma mark - MapViewStuff
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    _mapView.centerCoordinate = userLocation.location.coordinate;
 }
 
 @end

@@ -15,5 +15,7 @@
 @property (nonatomic,strong) MDCSwipeToChooseView* swipeView;
 @property (nonatomic,strong) UILabel* nameLable;
 
+@property(nonatomic) int restaurant;
+@property(nonatomic, strong) NSString *restString;
 
 @end

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Swipe View Controller-->
@@ -47,7 +48,7 @@
         <!--View Controller-->
         <scene sceneID="ZkZ-8c-6C4">
             <objects>
-                <viewController id="DZv-cF-iOM" sceneMemberID="viewController">
+                <viewController id="DZv-cF-iOM" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H24-h8-abC"/>
                         <viewControllerLayoutGuide type="bottom" id="yFH-hd-pje"/>
@@ -56,12 +57,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="18M-3v-wWy">
-                                <rect key="frame" x="-2" y="2" width="600" height="600"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="18M-3v-wWy">
+                                <rect key="frame" x="-2" y="2" width="600" height="298"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DZv-cF-iOM" id="bWY-ev-gg6"/>
+                                </connections>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMt-PF-oQH">
+                                <rect key="frame" x="16" y="308" width="568" height="159"/>
+                                <color key="backgroundColor" red="1" green="0.72622034670000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZMt-PF-oQH" firstAttribute="trailing" secondItem="4LD-Ez-6kn" secondAttribute="trailingMargin" id="0cf-uD-jaF"/>
+                            <constraint firstItem="ZMt-PF-oQH" firstAttribute="top" secondItem="18M-3v-wWy" secondAttribute="bottom" constant="8" symbolic="YES" id="7Fc-fx-Xnf"/>
+                            <constraint firstItem="18M-3v-wWy" firstAttribute="leading" secondItem="4LD-Ez-6kn" secondAttribute="leadingMargin" constant="-18" id="CrL-cZ-0RU"/>
+                            <constraint firstItem="18M-3v-wWy" firstAttribute="top" secondItem="4LD-Ez-6kn" secondAttribute="topMargin" constant="2" id="LxH-OT-0R8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="18M-3v-wWy" secondAttribute="trailing" constant="-14" id="iMg-tb-m3z"/>
+                            <constraint firstItem="yFH-hd-pje" firstAttribute="top" secondItem="ZMt-PF-oQH" secondAttribute="bottom" constant="133" id="l3E-E0-4vA"/>
+                            <constraint firstItem="yFH-hd-pje" firstAttribute="top" secondItem="18M-3v-wWy" secondAttribute="bottom" constant="300" id="ruw-3w-mFF"/>
+                            <constraint firstItem="ZMt-PF-oQH" firstAttribute="leading" secondItem="4LD-Ez-6kn" secondAttribute="leadingMargin" id="u3s-i6-PEh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="18M-3v-wWy" id="wdP-w4-Hen"/>
+                        <outlet property="returnLabel" destination="ZMt-PF-oQH" id="0D7-w2-FMb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hy-PL-8eo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
