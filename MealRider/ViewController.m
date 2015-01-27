@@ -39,6 +39,8 @@
   self.geocoder = [[CLGeocoder alloc] init];
   self.locationManager.delegate = self;
 
+        [self.rc getAgenciesWithLocation:nil];
+    
   [self getCurrLocation:nil];
 }
 
@@ -83,8 +85,8 @@
     NSString *latLongString = [NSString
         stringWithFormat:@"%.8f, %.8f", currentLocation.coordinate.longitude,
                          currentLocation.coordinate.latitude];
-    [self.rc getAgenciesWithLocation:currentLocation];
-    self.returnLabel.text = latLongString;
+
+    self.textView.text = latLongString;
   }
 
   // Reverse Geocoding
@@ -95,9 +97,9 @@
              NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
              if (error == nil && [placemarks count] > 0) {
                self.placemark = [placemarks lastObject];
-               self.returnLabel.text =
+               self.textView.text =
                    [NSString stringWithFormat:@"%@ \n%@ %@\n%@ %@\n%@\n%@",
-                                              self.returnLabel.text,
+                                              self.textView.text,
                                               self.placemark.subThoroughfare,
                                               self.placemark.thoroughfare,
                                               self.placemark.postalCode,
@@ -128,14 +130,14 @@
 
 - (void)storeAgencies:(NSDictionary *)agencyDict {
   self.agencyDict = agencyDict;
-  self.returnLabel.text = [agencyDict description];
+  self.textView.text = [agencyDict description];
     [self.rc getRoutesForAgencies:agencyDict];
   NSLog(@"%@", [agencyDict description]);
 }
 
 - (void) storeRoutes:(NSDictionary *)routeDict{
     self.routeDict = routeDict;
-    self.returnLabel.text = [self.returnLabel.text stringByAppendingString:[routeDict description]];
+    self.textView.text = [self.textView.text stringByAppendingString:[routeDict description]];
     NSLog(@"%@",[routeDict description]);
     
 }

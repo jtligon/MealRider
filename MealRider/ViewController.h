@@ -21,8 +21,8 @@
 @property (strong,nonatomic) CLPlacemark *placemark;
 
 //Labels
-@property (weak, nonatomic) IBOutlet UILabel *returnLabel;
 
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 -(void)locationAquired;
 - (IBAction)getCurrLocation:(id)sender;
