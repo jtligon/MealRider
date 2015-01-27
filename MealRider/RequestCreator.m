@@ -31,6 +31,7 @@
 - (instancetype)init {
 	self = [super init];
 	if (self) {
+        //set up the additional headers needed for the mashape api calls
         NSURLSessionConfiguration *config =[[[NSURLSession sharedSession] configuration]copy];
         NSDictionary *headers = @{ @"X-Mashape-Key": @"ysuKkNDkPnmsh6Udvv3XNdw0AzYbp1xyufdjsnRTV0yP8TgvlT" };
         
@@ -77,7 +78,6 @@
                 
 	        //throw up a UIAlert that tells the user that the lookup failed.
 
-	        //dispatch_sync(dispatch_get_main_queue(), ^{ //put gui stuff here }
             
             }] resume];
 }
@@ -134,7 +134,7 @@
                                 }
                             }
                             
-                            
+                            //store them all in a dictionary and send it back to the delegate.
                             NSDictionary *routeDict = [NSDictionary dictionaryWithObjects:routeNames forKeys:routeIDs];
                             NSLog(@"%@", routeDict);
                             if ([self.delegate respondsToSelector:@selector(storeRoutes:)]) {
@@ -143,7 +143,6 @@
                             
                             //throw up a UIAlert that tells the user that the lookup failed.
                             
-                            //dispatch_sync(dispatch_get_main_queue(), ^{ //put gui stuff here }
                             
                         }] resume];
 }
