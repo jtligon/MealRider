@@ -157,7 +157,7 @@
         }
     }];
     // index is the stop that is closest to the user
-    int index = [distances indexOfObject:[sortedDistances lastObject]];
+    NSUInteger index = [distances indexOfObject:[sortedDistances lastObject]];
     self.textView.text = [NSString stringWithFormat:@"The closest stop to your location is %@", self.stopDict[@"names"][index]];
     [self findRestStop];
 }
@@ -186,7 +186,14 @@
             return NSOrderedSame;
         }
     }];
-    int index = [distances indexOfObject:[sortedDistances lastObject]];
+//    MKCoordinateRegionForMapRect(MKMa)
+    
+    CLLocationDistance mapRange= [self.userLocation distanceFromLocation:restLoc];
+    MKCoordinateRegion region =
+    MKCoordinateRegionMakeWithDistance (self.userLocation.coordinate, round(mapRange) ,round(mapRange));
+    [self.mapView setRegion:region animated:YES];
+    
+    NSUInteger index = [distances indexOfObject:[sortedDistances lastObject]];
     self.textView.text = [self.textView.text stringByAppendingFormat:@"\nAnd the closest stop to %@ is %@", self.restString, self.stopDict[@"names"][index] ];
 }
 
@@ -215,6 +222,10 @@
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     _mapView.centerCoordinate = userLocation.location.coordinate;
+}
+
+- (IBAction)zoomIn:(id)sender {
+    
 }
 
 @end

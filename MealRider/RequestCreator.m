@@ -50,19 +50,22 @@
     // if we passed in a location, then we need to look up based on that
     // location
     NSString *myLoc =
-        [NSString stringWithFormat:@"https://transloc-api-1-2.p.mashape.com/agencies.json?agencies=12,16&callback=call&geo_area=%f,%f|10.0",
+        [NSString stringWithFormat:@"https://transloc-api-1-2.p.mashape.com/"
+                                   @"agencies.json?agencies=12,16&callback="
+                                   @"call&geo_area=%f,%f|10.0",
                                    location.coordinate.latitude,
                                    location.coordinate.longitude];
     // and store it for future calls
     self.lastSeenLocation = location;
-    agencyURL =
-      [NSURL URLWithString:[self URLEncodedString:myLoc] ];
+    agencyURL = [NSURL URLWithString:[self URLEncodedString:myLoc]];
   } else {
 
     agencyURL =
-        [NSURL URLWithString:@"https://transloc-api-1-2.p.mashape.com/agencies.json?agencies=12&callback=call&geo_area=35.80176,-78.64347%7C35.78061,-78.68218"];
+        [NSURL URLWithString:@"https://transloc-api-1-2.p.mashape.com/"
+                             @"agencies.json?agencies=12&callback=call&geo_"
+                             @"area=35.80176,-78.64347%7C35.78061,-78.68218"];
   }
-    NSLog(@"%@",[agencyURL absoluteString]);
+  NSLog(@"%@", [agencyURL absoluteString]);
   [[self.someSession
         dataTaskWithURL:agencyURL
       completionHandler:^(NSData *data, NSURLResponse *response,
@@ -122,22 +125,23 @@
   // location if it exists.
   if (agencies.count > 0) {
     NSString *agencyString = [agencies.allKeys componentsJoinedByString:@","];
-    NSString *urlString = [NSString
-        stringWithFormat:@"https://transloc-api-1-2.p.mashape.com/"
-                         @"routes.json?agencies=%@&callback=call&",
-                         agencyString];
+    NSString *urlString =
+        [NSString stringWithFormat:@"https://transloc-api-1-2.p.mashape.com/"
+                                   @"routes.json?agencies=%@&callback=call&",
+                                   agencyString];
     // TODO: last seen location
     // geo_area=%f,%f%|2.0",
     // self.lastSeenLocation.coordinate.longitude,self.lastSeenLocation.coordinate.latitude
     // ]
-      urlString =[ urlString stringByAppendingFormat:@"geo_area=%f,%f|10.0",self.lastSeenLocation.coordinate.longitude,self.lastSeenLocation.coordinate.latitude ];
-    routeURL = [NSURL
-        URLWithString:[self URLEncodedString:urlString]];
+    urlString = [urlString
+        stringByAppendingFormat:@"geo_area=%f,%f|10.0",
+                                self.lastSeenLocation.coordinate.longitude,
+                                self.lastSeenLocation.coordinate.latitude];
+    routeURL = [NSURL URLWithString:[self URLEncodedString:urlString]];
   } else {
-    routeURL =
-        [NSURL URLWithString:@"https://transloc-api-1-2.p.mashape.com/"
-                             @"routes.json?agencies=12%2C16&callback=call&geo_"
-                             @"area=35.80176,-78.64347%7C35.78061,-78.68218"];
+    routeURL = [NSURL URLWithString:@"https://transloc-api-1-2.p.mashape.com/"
+                      @"routes.json?agencies=12%2C16&callback=call&geo_"
+                      @"area=35.80176,-78.64347%7C35.78061,-78.68218"];
   }
 
   [[self.someSession
@@ -209,17 +213,20 @@
   if (agencies.count > 0) {
     NSString *agencyString = [agencies.allKeys componentsJoinedByString:@","];
     NSString *urlString = [NSString
-        stringWithFormat:@"https://transloc-api-1-2.p.mashape.com/stops.json?agencies=%@&callback=call&geo_area=35.80176,-78.64347|35.78061,-78.68218",
+        stringWithFormat:@"https://transloc-api-1-2.p.mashape.com/"
+                         @"stops.json?agencies=%@&callback=call&geo_area=35."
+                         @"80176,-78.64347|35.78061,-78.68218",
                          agencyString];
     // TODO: last seen location
     // geo_area=%f,%f%|2.0",
     // self.lastSeenLocation.coordinate.longitude,self.lastSeenLocation.coordinate.latitude
     // ]
-    stopURL = [NSURL
-               URLWithString:[self URLEncodedString: urlString]];
+    stopURL = [NSURL URLWithString:[self URLEncodedString:urlString]];
   } else {
     stopURL =
-        [NSURL URLWithString:@"https://transloc-api-1-2.p.mashape.com/stops.json?agencies=12%2C16&callback=call&geo_area=35.80176,-78.64347%7C35.78061,-78.68218"];
+        [NSURL URLWithString:@"https://transloc-api-1-2.p.mashape.com/"
+                             @"stops.json?agencies=12%2C16&callback=call&geo_"
+                             @"area=35.80176,-78.64347%7C35.78061,-78.68218"];
   }
 
   [[self.someSession
@@ -248,10 +255,10 @@
         }
 
         // store them all in a dictionary and send it back to the delegate.
-          NSMutableDictionary *stopDict =[NSMutableDictionary dictionary];
-          stopDict[@"ids"]= stopIDs;
-          stopDict[@"names"]=stopNames;
-          stopDict[@"locs"] = stopLocs;
+        NSMutableDictionary *stopDict = [NSMutableDictionary dictionary];
+        stopDict[@"ids"] = stopIDs;
+        stopDict[@"names"] = stopNames;
+        stopDict[@"locs"] = stopLocs;
         NSLog(@"%@", stopDict);
         if ([self.delegate respondsToSelector:@selector(storeStops:)]) {
           [self.delegate performSelectorOnMainThread:@selector(storeStops:)
@@ -302,13 +309,12 @@
 */
 }
 
-- (NSString *) URLEncodedString:(NSString*)someURL{
-    NSString *encodedString = CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-                                                                                        (__bridge CFStringRef)someURL, NULL, CFSTR(",|"), kCFStringEncodingUTF8));
-    
-    NSCharacterSet *customSet = [[NSCharacterSet characterSetWithCharactersInString:@",\"#%/<>?@\\^`{|}"] invertedSet];
-    NSString *output = [someURL stringByAddingPercentEncodingWithAllowedCharacters:customSet];
-    return encodedString;
+- (NSString *)URLEncodedString:(NSString *)someURL {
+  NSString *encodedString =
+      CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+          kCFAllocatorDefault, (__bridge CFStringRef)someURL, NULL, CFSTR(",|"),
+          kCFStringEncodingUTF8));
+  return encodedString;
 }
 
 @end
