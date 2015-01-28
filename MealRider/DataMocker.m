@@ -25,8 +25,12 @@
 +(NSDictionary*)locOfRestaurant{
     
     return @{
-             @"Mitch's Tavern" : [NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(35.788332, -78.667715) ],
-             @"David's Dumplings":[NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(35.785972,-78.661555)]
+             @"Mitch's Tavern":[NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(35.787880, -78.667657) ],
+             @"Sammy's":[NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(35.777646, -78.677269) ],
+             @"Bida Manda":[NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(35.777553, -78.636817) ],
+             @"David's Dumplings":[NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(35.786227, -78.661555) ],
+             @"Zaxby's":[NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(35.789178, -78.675277) ],
+             @"East Village":[NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(35.789908, -78.676145) ]
              };
 }
 

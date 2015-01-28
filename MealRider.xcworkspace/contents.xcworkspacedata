@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:office.gpx">
+   </FileRef>
+   <FileRef
       location = "group:MealRider.xcodeproj">
    </FileRef>
    <FileRef

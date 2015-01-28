@@ -8,18 +8,17 @@
 
 #import "ViewController.h"
 #import "SwipeViewController.h"
+#import "DataMocker.h"
 
 @interface ViewController ()
 
-@property(nonatomic) int restaurant;
-@property(nonatomic, strong) NSString *restString;
 
 @property(nonatomic, strong) NSDictionary *agencyDict;
 @property(nonatomic, strong) NSDictionary *routeDict;
 @property(nonatomic, strong) NSDictionary *stopDict;
 
 @property(nonatomic,assign)CLLocation *userLocation;
-@property(nonatomic, assign) BOOL dataReady;
+@property(atomic, assign) BOOL dataReady;
 
 @end
 
@@ -43,21 +42,8 @@
     [self.locationManager requestWhenInUseAuthorization];
   self.geocoder = [[CLGeocoder alloc] init];
   self.locationManager.delegate = self;
-
-        [self.rc getAgenciesWithLocation:nil];
     
   [self getCurrLocation:nil];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-  if ([segue.identifier isEqualToString:@"MapKitEntry"]) {
-
-    SwipeViewController *destination =
-        (SwipeViewController *)segue.destinationViewController;
-    self.restaurant = destination.restaurant;
-    self.restString = destination.restString;
-  }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,22 +74,18 @@
 
   if (currentLocation != nil) {
     NSString *latLongString = [NSString
-        stringWithFormat:@"%.8f, %.8f", currentLocation.coordinate.longitude,
-                         currentLocation.coordinate.latitude];
+        stringWithFormat:@"%.8f, %.8f", currentLocation.coordinate.latitude,
+                         currentLocation.coordinate.longitude];
 
     self.textView.text = latLongString;
   }
     self.userLocation = currentLocation;
-    if ([self areWeReady]) {
-        [self findOurStop];
-    }else{
-        [self.rc getAgenciesWithLocation:self.userLocation];
-    }
+    [self areWeReady];
     
   // Reverse Geocoding
-  NSLog(@"Resolving the Address");
+  /*NSLog(@"Resolving the Address");
   [self.geocoder
-      reverseGeocodeLocation:currentLocation
+      reverseGeocodeLocation:self.userLocation
            completionHandler:^(NSArray *placemarks, NSError *error) {
              NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
              if (error == nil && [placemarks count] > 0) {
@@ -120,16 +102,12 @@
              } else {
                NSLog(@"%@", error.debugDescription);
              }
-           }];
+           }];*/
   [self.locationManager stopUpdatingLocation];
 }
 
-- (void)locationAquired {
-  // we've got a lock, now we can request a location
-}
-
 - (IBAction)getCurrLocation:(id)sender {
-
+    NSLog(@"Getting Location!");
   self.locationManager.delegate = self;
   self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
   if ([CLLocationManager locationServicesEnabled]) {
@@ -139,25 +117,32 @@
 
 -(BOOL)areWeReady{
     if (!self.dataReady) {
-        if (self.stopDict) {
-            if (self.userLocation) {
+        //do we have stops?
+        if ([self.stopDict[@"ids"] count] > 0) {
+            //do we have user location?
+            if (CLLocationCoordinate2DIsValid(self.userLocation.coordinate )) {
+                //call us once
                 self.dataReady = YES;
+                NSLog(@"*** READY ***");
+                [self findOurStop];
                 return YES;
             }
+        }else{
+            [self.rc getAgenciesWithLocation:self.userLocation];
         }
     }
+    NSLog(@"--- Not Ready ---");
     return NO;
 }
 
 -(void)findOurStop{
-    self.dataReady = NO;
     //we should have our stops and our location here
     NSArray* distances = [NSArray array];
     float latitude,longitude = 0.0f;
     CLLocation* someLoc = nil;
     for (NSDictionary* locDict in self.stopDict[@"locs"]) {
-        latitude = (float)[[locDict valueForKey:@"latitude"] floatValue];
-        longitude = (float)[[locDict valueForKey:@"longitude"] floatValue];
+        latitude = (float)[[locDict valueForKey:@"lat"] floatValue];
+        longitude = (float)[[locDict valueForKey:@"lng"] floatValue];
         someLoc = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
         double distance =[self.userLocation distanceFromLocation:someLoc];
         distances = [distances arrayByAddingObject:[NSNumber numberWithDouble:distance] ];
@@ -172,36 +157,58 @@
         }
     }];
     // index is the stop that is closest to the user
-    int index = [distances indexOfObject:sortedDistances[0]];
+    int index = [distances indexOfObject:[sortedDistances lastObject]];
     self.textView.text = [NSString stringWithFormat:@"The closest stop to your location is %@", self.stopDict[@"names"][index]];
+    [self findRestStop];
+}
+
+-(void)findRestStop{
+    self.restString = [DataMocker listOfRestaurant][self.restaurant];
+    NSValue* restValue = [DataMocker locOfRestaurant][self.restString];
+    CLLocation* restLoc = [[CLLocation alloc] initWithLatitude:restValue.MKCoordinateValue.latitude longitude:restValue.MKCoordinateValue.longitude];
     
+    NSArray* distances = [NSArray array];
+    float latitude,longitude = 0.0f;
+    CLLocation* someLoc = nil;
+    for (NSDictionary* locDict in self.stopDict[@"locs"]) {
+        latitude = (float)[[locDict valueForKey:@"lat"] floatValue];
+        longitude = (float)[[locDict valueForKey:@"lng"] floatValue];
+        someLoc = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+        double distance =[restLoc distanceFromLocation:someLoc];
+        distances = [distances arrayByAddingObject:[NSNumber numberWithDouble:distance] ];
+    }
+    NSArray *sortedDistances = [distances sortedArrayUsingComparator:^NSComparisonResult(id lhs, id rhs) {
+        if ([lhs floatValue] > [rhs floatValue]) {
+            return NSOrderedAscending;
+        } else if ([lhs floatValue] < [rhs floatValue]) {
+            return NSOrderedDescending;
+        } else {
+            return NSOrderedSame;
+        }
+    }];
+    int index = [distances indexOfObject:[sortedDistances lastObject]];
+    self.textView.text = [self.textView.text stringByAppendingFormat:@"\nAnd the closest stop to %@ is %@", self.restString, self.stopDict[@"names"][index] ];
 }
 
 #pragma mark - RequestDelegate stuff
 
 - (void)storeAgencies:(NSDictionary *)agencyDict {
   self.agencyDict = agencyDict;
-  self.textView.text = [agencyDict description];
-    [self.rc getStopsForAgencies:agencyDict];
-  NSLog(@"%@", [agencyDict description]);
+    if (agencyDict.count > 0) {
+            [self.rc getStopsForAgencies:agencyDict];
+    }
 }
 
 - (void) storeRoutes:(NSDictionary *)routeDict{
     self.routeDict = routeDict;
-    self.textView.text = [self.textView.text stringByAppendingString:[routeDict description]];
     NSLog(@"%@",[routeDict description]);
     
 }
 
 - (void) storeStops:(NSDictionary *)stopDict{
     self.stopDict = stopDict;
-    self.textView.text = [self.textView.text stringByAppendingString:[stopDict description]];
     NSLog(@"%@",[stopDict description]);
-    if ([self areWeReady]) {
-        [self findOurStop];
-    }else{
-        [self getCurrLocation:self];
-    }
+    [self areWeReady];
 }
 
 #pragma mark - MapViewStuff

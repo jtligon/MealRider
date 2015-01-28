@@ -9,6 +9,7 @@
 #import "SwipeViewController.h"
 #import "DataMocker.h"
 #import "RequestCreator.h"
+#import "ViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 
@@ -21,6 +22,17 @@
 
 - (IBAction)goToMapViewWithMKLocation:(MKMapPoint)mapPoint sender:(id)sender {
   [self performSegueWithIdentifier:@"MapKitEntry" sender:sender];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"MapKitEntry"]) {
+        
+        ViewController *destination =
+        (ViewController *)segue.destinationViewController;
+        destination.restaurant = self.restaurant;
+        destination.restString = self.restString;
+    }
 }
 
 - (void)nextRestaurant {

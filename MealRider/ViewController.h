@@ -13,6 +13,10 @@
 
 @interface ViewController : UIViewController<CLLocationManagerDelegate, MKMapViewDelegate, RequestDelegate>
 
+
+@property(nonatomic) int restaurant;
+@property(nonatomic, strong) NSString *restString;
+
 @property (nonatomic,strong) IBOutlet RequestCreator *rc;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -20,11 +24,8 @@
 @property (strong,nonatomic) CLGeocoder *geocoder;
 @property (strong,nonatomic) CLPlacemark *placemark;
 
-//Labels
-
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
--(void)locationAquired;
 - (IBAction)getCurrLocation:(id)sender;
 
 @end
